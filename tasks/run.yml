@@ -1,0 +1,16 @@
+---
+
+- name: Install Lynis
+  git:
+    repo: https://github.com/CISOfy/lynis.git
+    accept_hostkey: True
+    remote: github
+    version: master
+    dest: "/usr/local/lynis"
+
+- name: Chown dirs
+  file:
+    path: /usr/local/lynis
+    owner: root
+    group: root
+    recurse: true

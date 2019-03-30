@@ -1,0 +1,4 @@
+---
+# tasks file for lynis
+
+- include_tasks: install.yml
