@@ -1,0 +1,18 @@
+---
+
+- name: Add apt key
+  apt_key:
+    state: present
+    keyserver: 'hkp://keyserver.ubuntu.com:80'
+    id: 'C80E383C3DE9F082E01391A0366C67DE91CA5D5F'
+
+- name: Add apt repository
+  apt_repository:
+    repo: "deb https://packages.cisofy.com/community/lynis/deb/ stable main"
+    state: present
+    filename: 'lynis'
+
+- name: Instal lynis package
+  apt:
+    name: lynis
+    state: latest
