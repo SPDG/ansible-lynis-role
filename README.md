@@ -24,6 +24,8 @@ Example Playbook
 This will install lynis on servers:
 
     - hosts: servers
+      
+      become: yes
       roles:
          - { role: krecik.lynis }
 
